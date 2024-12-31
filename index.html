@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Search</title>
+    <style>
+        *
+        {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding-top: 50px;
+            background-color: #f2f2f2;
+        }
+
+        .search-container {
+            background-color: white;
+            border-radius: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 500px;
+            margin: 0 auto;
+            margin-top: 40px;
+        }
+        .search-container:hover {
+            transform: scale(1.2);
+            transition: transform 0.3s ease; 
+
+
+        }
+
+        .search-bar {
+            width: 350px;
+            padding: 10px;
+            font-size: 18px;
+            border: 1px solid #dcdcdc;
+            border-radius: 25px;
+            outline: none;
+            margin-top: 10px;
+        }
+
+        .search-bar:focus {
+            border-color: #4285f4;
+        }
+        .search-bar:hover {
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+
+
+        }
+
+        .search-button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #4285f4;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+        }
+
+        .search-button:hover {
+            background-color: #357ae8;
+        }
+       
+    @media (max-width: 768px) {
+      .search-button:hover {
+        width: 45%;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .search-container {
+        width: 100%;
+      }
+    }
+    </style>
+</head>
+<body>
+    <div class="search-container">
+        <h1>Jahoogle</h1>
+        <input type="text" class="search-bar" placeholder="Jahongirmirzo.com" id="searchInput">
+        <br>
+        <button class="search-button" onclick="searchGoogle()">Search</button>
+    </div>
+
+    <script>
+        function searchGoogle() {
+            var query = document.getElementById("searchInput").value;
+            if (query) {
+                window.location.href = "https://www.google.com/search?q=" + encodeURIComponent(query);
+            }
+        }
+    </script>
+</body>
+</html>
